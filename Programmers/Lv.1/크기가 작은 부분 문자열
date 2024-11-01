@@ -1,0 +1,14 @@
+function solution(t, p) {
+    var answer = "";
+    var cnt = 0;
+    
+    let arr = t.split("");
+    for(let i=0; i<arr.length-p.length+1; i++){
+        answer = t.substr(i, p.length);
+        if(answer <= p){
+            cnt ++;
+        }
+    }
+    return cnt;
+ 
+} 
