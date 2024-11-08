@@ -1,0 +1,5 @@
+function solution(n, k) {
+  let i = Math.floor(n / 10);
+  let ans = 12000 * n + 2000 * k;
+  return ans - 2000 * i;
+}
