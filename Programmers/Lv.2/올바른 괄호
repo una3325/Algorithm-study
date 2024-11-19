@@ -1,0 +1,18 @@
+function solution(s) {
+  let arr = s.split("");
+  let left = 0;
+  let right = 0;
+
+  for (let i = 0; i <= arr.length; i++) {
+    if (arr[i] === "(") {
+      left++;
+    }
+    if (arr[i] === ")") {
+      right++;
+    }
+    if (left < right) {
+      return false;
+    } //())( -> 이런 경우도 안됨
+  }
+  return arr[0] === "(" && left === right ? true : false;
+}

@@ -1,0 +1,20 @@
+function solution(s) {
+    // let arr = Array.from(String(s),Number)
+    let arr = s.split(" ");
+    let ans = arr.map(Number);
+    let max = ans[0];
+    let min = ans[0];
+    
+ 
+    for(let i=1; i<ans.length; i++){
+        if(ans[i] > max){
+            max = ans[i];
+            
+        } 
+          if(ans[i] < min){
+            min = ans[i];
+            
+        } 
+    } 
+    return min+" "+max
+}
