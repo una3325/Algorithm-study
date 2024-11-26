@@ -1,0 +1,4 @@
+function solution(numbers) {
+    let ans = numbers.sort((a,b)=>a-b);
+    return ans[ans.length-1] * ans[ans.length-2]
+}
