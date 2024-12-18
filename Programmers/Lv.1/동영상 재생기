@@ -1,0 +1,53 @@
+function solution(video_len, pos, op_start, op_end, commands) {
+    //초로 만드는 함수 
+    function seconds(time){
+        const [minutes, seconds] = time.split(":").map(Number);
+        return minutes * 60 + seconds;
+    }
+   
+    video_len = seconds(video_len)
+    pos = seconds(pos)
+    op_start = seconds(op_start)
+    op_end = seconds(op_end)
+    
+    
+    //현재 위치가 10보다 작으면 영상의 처음으로 이동 
+    if(pos < 10){
+        pos = 0
+    }
+    
+    //현재 위치가 오프닝 사이에 있으면 오프닝 끝으로 이동 
+    if (op_start <= pos && pos <= op_end) {
+        pos = op_end;
+    }
+    
+    //next : +10, prev : -10
+    for (let i = 0; i < commands.length; i++) {
+        if (commands[i] === "next") {
+            pos += 10;
+            if (video_len - pos < 10) {
+                pos = video_len;
+            }
+            if (op_start <= pos && pos <= op_end) {
+                pos = op_end;
+            }
+        } else if (commands[i] === "prev") {
+            pos -= 10;
+            if (pos < 10) {
+                pos = 0;
+            }
+            if (op_start <= pos && pos <= op_end) {
+                pos = op_end;
+            }
+        }
+    }
+   
+    //원래 대로 되돌리기 
+    function res(sec) {
+        const minutes = Math.floor(sec / 60).toString().padStart(2, "0");
+        const seconds = (sec % 60).toString().padStart(2, "0");
+        return `${minutes}:${seconds}`;
+    }
+    
+    return res(pos)
+}
