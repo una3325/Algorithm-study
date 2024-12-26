@@ -1,0 +1,4 @@
+function solution(num) {
+    const ans = num%2 === 0 ? "Even" : "Odd";
+    return ans;
+}
