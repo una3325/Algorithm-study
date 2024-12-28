@@ -1,0 +1,9 @@
+function solution(s) {
+  let arr = s.split("");
+  for (let i = 0; i < arr.length; i++) {
+    if ((s.length != 4 && s.length != 6) || isNaN(Number(arr[i]))) {
+      return false;
+    }
+  }
+  return true;
+}
