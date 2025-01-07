@@ -1,0 +1,11 @@
+function solution(arr){
+    let ans = 0;
+    let N = arr.length;
+    
+    for(let i=0; i<N; i++)
+        {
+            ans += arr[i]
+        }
+    let avg=ans/N;
+    return avg;
+}
