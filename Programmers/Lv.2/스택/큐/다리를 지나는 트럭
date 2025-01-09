@@ -1,0 +1,21 @@
+function solution(bridge_length, weight, truck_weights) {
+    var answer = 0;
+    let move = []; //이동 중 트럭 
+    
+    while (truck_weights.length > 0 || move.length > 0) {
+        if (move.length > 0 && move[0].time === answer) {
+            move.shift();
+        }
+
+        let move_weight = move.reduce((acc, current) => acc + current.weight, 0);
+
+        if (truck_weights.length > 0 && move_weight + truck_weights[0] <= weight && move.length < bridge_length) {
+            const truck = truck_weights.shift();
+            move.push({ weight: truck, time: answer + bridge_length }); 
+        }
+
+        answer++;
+    }
+    
+    return answer;
+}
