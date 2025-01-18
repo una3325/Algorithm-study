@@ -1,0 +1,14 @@
+function solution(s) {
+  let ans = [];
+  let arr = s.split("");
+
+  ans[0] = s[0].toUpperCase();
+  for (let i = 1; i < s.length; i++) {
+    if (s[i - 1] === " ") {
+      ans[i] = s[i].toUpperCase();
+    } else {
+      ans[i] = s[i].toLowerCase();
+    }
+  }
+  return ans.join().replaceAll(",", "");
+}
