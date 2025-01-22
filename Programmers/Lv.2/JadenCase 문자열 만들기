@@ -9,5 +9,5 @@ function solution(s) {
       ans[i] = s[i].toLowerCase();
     }
   }
-  return ans.join().replaceAll(",", "");
+  return ans.join("");
 }
