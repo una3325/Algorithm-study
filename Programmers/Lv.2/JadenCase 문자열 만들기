@@ -1,6 +1,5 @@
 function solution(s) {
   let ans = [];
-  let arr = s.split("");
 
   ans[0] = s[0].toUpperCase();
   for (let i = 1; i < s.length; i++) {
