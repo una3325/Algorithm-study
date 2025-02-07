@@ -1,11 +1,13 @@
 function solution(s) {
   let ans = [];
 
-  ans[0] = s[0].toUpperCase();
+  ans[0] = s[0].toUpperCase(); //가장 첫 글자를 대문자로 변환
   for (let i = 1; i < s.length; i++) {
     if (s[i - 1] === " ") {
+      //이전 문자가 공백이면 대문자로 변환
       ans[i] = s[i].toUpperCase();
     } else {
+      //공백이 아니면 소문자로 변환
       ans[i] = s[i].toLowerCase();
     }
   }
