@@ -1,0 +1,6 @@
+function solution(my_string) {
+  let res = Array.from(my_string)
+    .sort((a, b) => -1)
+    .join("");
+  return res;
+}
