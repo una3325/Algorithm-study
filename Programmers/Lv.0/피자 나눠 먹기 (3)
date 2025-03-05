@@ -1,0 +1,6 @@
+function solution(slice, n){
+    let result = 1;
+    for (let i=1; i*slice<n; i++){
+            result ++;
+    } return result;
+}
