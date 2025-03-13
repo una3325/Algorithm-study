@@ -1,0 +1,15 @@
+function solution(s) {
+  let Ycnt = 0;
+  let Pcnt = 0;
+  let arr = Array.from(s);
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].toLowerCase() === "y") {
+      Ycnt += 1;
+    }
+    if (arr[i].toLowerCase() === "p") {
+      Pcnt += 1;
+    }
+  }
+  return Ycnt === Pcnt ? true : false;
+}
